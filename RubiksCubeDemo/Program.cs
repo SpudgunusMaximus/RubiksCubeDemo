@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using RubiksCubeDemo;
 using RubiksCubeDemo.Processor;
-using System;
 using static RubiksCubeDemo.FaceTypes;
 
 Console.WriteLine("Hello, World!");
