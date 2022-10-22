@@ -1,27 +1,31 @@
 ﻿using static RubiksCubeDemo.FaceTypes;
+using static RubiksCubeDemo.RotationTypes;
 
 namespace RubiksCubeDemo.Processor.Handlers
 {
-    internal class DownClockwiseHandler
+    internal class DownClockwiseHandler : RotationHandlerBase, IRotationHandler
     {
-        private readonly List<Face> _faces;
 
-        public DownClockwiseHandler(List<Face> faces)
+        public DownClockwiseHandler(List<Face> faces) : base(faces, FaceType.Down, RotationType.Clockwise) { }
+
+
+        public void Rotate()
         {
-            _faces = faces;
+            Transpose();
+            MoveNeighbours();
         }
 
-        public void MoveNeighbours()
+        protected override void MoveNeighbours()
         {
             Face frontFace = _faces.Single(f => f.FaceType == FaceType.Front);
             Face rightFace = _faces.Single(f => f.FaceType == FaceType.Right);
             Face leftFace = _faces.Single(f => f.FaceType == FaceType.Left);
             Face backFace = _faces.Single(f => f.FaceType == FaceType.Back);
 
-            var frontFaceCubiesCopy = (int[,])frontFace.Cubies.Clone();
-            var backFaceCubiesCopy = (int[,])backFace.Cubies.Clone();
-            var rightFaceCubiesCopy = (int[,])rightFace.Cubies.Clone();
-            var leftFaceCubiesCopy = (int[,])leftFace.Cubies.Clone();
+            var frontFaceCubiesCopy = (Color[,])frontFace.Cubies.Clone();
+            var backFaceCubiesCopy = (Color[,])backFace.Cubies.Clone();
+            var rightFaceCubiesCopy = (Color[,])rightFace.Cubies.Clone();
+            var leftFaceCubiesCopy = (Color[,])leftFace.Cubies.Clone();
 
             rightFace.Cubies[2, 0] = frontFaceCubiesCopy[2, 0];
             rightFace.Cubies[2, 1] = frontFaceCubiesCopy[2, 1];

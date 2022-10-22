@@ -1,6 +1,6 @@
 ﻿namespace RubiksCubeDemo
 {
-    internal class FaceTypes
+    public class FaceTypes
     {
         public enum FaceType
         {

@@ -3,20 +3,21 @@ using static RubiksCubeDemo.FaceTypes;
 
 namespace RubiksCubeDemo
 {
-    internal class Face
+    public class Face
     {
-        public int[,] Cubies { get; set; }
+        public Color[,] Cubies { get; set; }
         public FaceType FaceType { get; }
 
         public Face(FaceType faceType)
         {
             FaceType = faceType;
+            var colour = GetColor(faceType);
 
-            Cubies = new int[3, 3]
+            Cubies = new Color[3, 3]
             {
-                { 1, 2, 3},
-                { 4, 5, 6},
-                { 7, 8, 9}
+                { colour, colour, colour},
+                { colour, colour, colour},
+                { colour, colour, colour}
             };
         }
 
@@ -38,5 +39,16 @@ namespace RubiksCubeDemo
 
             return sb.ToString();
         }
+
+        private Color GetColor(FaceType faceType) => faceType switch
+        {
+            FaceType.Front => Color.Green,
+            FaceType.Right => Color.Red,
+            FaceType.Up => Color.White,
+            FaceType.Back => Color.Blue,
+            FaceType.Left => Color.Orange,
+            FaceType.Down => Color.Yellow,
+            _ => throw new ArgumentOutOfRangeException(nameof(faceType), $"Not expecting enum type {faceType}"),
+        };
     }
 }

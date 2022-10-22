@@ -1,76 +1,47 @@
 ﻿using RubiksCubeDemo.Processor.Handlers;
 using static RubiksCubeDemo.FaceTypes;
+using static RubiksCubeDemo.RotationTypes;
 
 namespace RubiksCubeDemo.Processor
 {
-    internal class RotationProcessor
+    public interface IRotationProcessor
+    {
+        List<Face> RotateFace(string rotationCommand);
+    }
+
+    public class RotationProcessor : IRotationProcessor
     {
         private List<Face> _faces;
+        private readonly IEnumerable<IRotationHandler> _handlers;
 
-        public RotationProcessor(List<Face> faces)
+        public RotationProcessor(List<Face> faces, IEnumerable<IRotationHandler> handlers)
         {
             _faces = faces;
+            _handlers = handlers;
         }
 
-        public void RotateFace(FaceType faceType)
+        public List<Face> RotateFace(string rotationCommand)
         {
-            var faceToRate = _faces.Single(f => f.FaceType == faceType);
-            WriteToConsole(faceToRate, "BEFORE:");
-            Transpose(faceToRate, false);
-            //WriteToConsole(faceToRate, "MID:");
-            SwapColumns(faceToRate);
-            WriteToConsole(faceToRate, "AFTER:");
-
-            FrontClockwiseHandler handler = new FrontClockwiseHandler(_faces);
-            handler.MoveNeighbours();
-            //Console.WriteLine("And Again...");
-            //handler.MoveNeighbours();
+            var handler = GetRotationHander(rotationCommand);
+            handler.Rotate();
+            return _faces;
         }
 
-        private void Transpose(Face face, bool clockwise)
+        private IRotationHandler GetRotationHander(string rotationCommand) => rotationCommand switch
         {
-            int maxIndex = face.ColLength - 1;
-            // Transpose the matrix
-            if (clockwise)
-            {
-                for (int i = 0; i <= maxIndex; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        int temp = face.Cubies[i, j];
-                        face.Cubies[i, j] = face.Cubies[j, i];
-                        face.Cubies[j, i] = temp;
-                    }
-                }
-            }
-            else
-            {
-                for(int i = 0; i < maxIndex; i++)
-                {
-                    for (int j = 0; j < maxIndex; j++)
-                    {
-                        int temp = face.Cubies[i, j];
-                        face.Cubies[i, j] = face.Cubies[maxIndex - j, maxIndex - i];
-                        face.Cubies[maxIndex - j, maxIndex - i] = temp;
-                    }
-                }
-            }
-
-        }
-
-        private void SwapColumns(Face face)
-        {
-            for (int row = 0; row < face.RowLength; row++)
-            {
-                var temp = face.Cubies[row, 0];
-                face.Cubies[row, 0] = face.Cubies[row, face.RowLength - 1];
-                face.Cubies[row, face.RowLength - 1] = temp;
-            }
-        }
-
-        private void WriteToConsole(Face face, string prefix)
-        {
-            Console.WriteLine(face.ToString());
-        }
+            CommandConstants.CST_FRONT_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Front && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_FRONT_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Front && h.RotationType == RotationType.AntiClockwise),
+            CommandConstants.CST_RIGHT_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Right && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_RIGHT_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Right && h.RotationType == RotationType.AntiClockwise),
+            CommandConstants.CST_UP_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Up && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_UP_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Up && h.RotationType == RotationType.AntiClockwise),
+            CommandConstants.CST_BACK_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Back && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_BACK_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Back && h.RotationType == RotationType.AntiClockwise),
+            CommandConstants.CST_LEFT_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Left && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_LEFT_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Left && h.RotationType == RotationType.AntiClockwise),
+            CommandConstants.CST_DOWN_CLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Down && h.RotationType == RotationType.Clockwise),
+            CommandConstants.CST_DOWN_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Down && h.RotationType == RotationType.AntiClockwise),
+            _ => throw new ArgumentOutOfRangeException(nameof(rotationCommand), $"Not expecting rotationCommand value {rotationCommand}"),           
+        };
     }
 }
