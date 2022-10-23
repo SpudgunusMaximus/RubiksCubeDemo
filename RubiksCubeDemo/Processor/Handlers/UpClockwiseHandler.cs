@@ -4,7 +4,7 @@ using static RubiksCubeDemo.Models.RotationTypes;
 
 namespace RubiksCubeDemo.Processor.Handlers
 {
-    internal class UpClockwiseHandler : RotationHandlerBase, IRotationHandler
+    public class UpClockwiseHandler : RotationHandlerBase, IRotationHandler
     {
         public UpClockwiseHandler(List<Face> faces) : base(faces, FaceType.Up, RotationType.Clockwise) { }
 
