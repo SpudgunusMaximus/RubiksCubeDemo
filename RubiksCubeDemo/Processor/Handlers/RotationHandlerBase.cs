@@ -6,12 +6,12 @@ namespace RubiksCubeDemo.Processor.Handlers
 {
     public abstract class RotationHandlerBase
     {
-        protected readonly List<Face> _faces;
+        protected readonly IEnumerable<Face> _faces;
         public RotationType RotationType { get; }
         public FaceType FaceType { get; } 
          
         private readonly Face _rotationFace;
-        public RotationHandlerBase(List<Face> faces, FaceType faceType, RotationType rotationType)
+        public RotationHandlerBase(IEnumerable<Face> faces, FaceType faceType, RotationType rotationType)
         {
             _faces = faces;
             _rotationFace = faces.Single(f => f.FaceType == faceType);

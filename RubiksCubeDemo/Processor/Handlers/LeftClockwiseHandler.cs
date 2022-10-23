@@ -6,7 +6,7 @@ namespace RubiksCubeDemo.Processor.Handlers
 {
     public class LeftClockwiseHandler : RotationHandlerBase, IRotationHandler
     {
-        public LeftClockwiseHandler(List<Face> faces) : base(faces, FaceType.Left, RotationType.Clockwise) { }
+        public LeftClockwiseHandler(IEnumerable<Face> faces) : base(faces, FaceType.Left, RotationType.Clockwise) { }
 
         public void Rotate()
         {

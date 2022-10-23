@@ -5,7 +5,7 @@ namespace RubiksCubeDemo
 {
     public interface IMainFormView
     {
-        List<Face> SetFaces { set; }
+        IEnumerable<Face> SetFaces { set; }
         void MakeMove(string move);
         void AddToHistory(string move);
         void ClearHistory();

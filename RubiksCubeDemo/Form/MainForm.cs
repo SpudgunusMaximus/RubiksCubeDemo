@@ -9,11 +9,11 @@ namespace RubiksCubeDemo
     {
         private readonly SolidBrush[] _brushes;
         private readonly Pen _pen;
-        private List<Face>? _faces;
+        private IEnumerable<Face>? _faces;
 
         private readonly MainFormPresenter _presenter;
 
-        public List<Face> SetFaces
+        public IEnumerable<Face> SetFaces
         {
             set
             {

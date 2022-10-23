@@ -10,7 +10,7 @@ namespace RubiksCubeDemo.ExtensionMethods
     {
         public static void AddCubeFaces(this IServiceCollection collection)
         {
-            collection.AddSingleton<List<Face>>(new List<Face>
+            collection.AddSingleton<IEnumerable<Face>>(new List<Face>
             {
                 new Face(FaceType.Front),
                 new Face(FaceType.Up),

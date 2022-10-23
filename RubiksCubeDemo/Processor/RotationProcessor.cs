@@ -8,22 +8,22 @@ namespace RubiksCubeDemo.Processor
 {
     public interface IRotationProcessor
     {
-        List<Face> RotateFace(string rotationCommand);
-        List<Face> GetFaces(bool reset = false);
+        IEnumerable<Face> RotateFace(string rotationCommand);
+        IEnumerable<Face> GetFaces(bool reset = false);
     }
 
     public class RotationProcessor : IRotationProcessor
     {
-        private List<Face> _faces;
+        private IEnumerable<Face> _faces;
         private readonly IEnumerable<IRotationHandler> _handlers;
 
-        public RotationProcessor(List<Face> faces, IEnumerable<IRotationHandler> handlers)
+        public RotationProcessor(IEnumerable<Face> faces, IEnumerable<IRotationHandler> handlers)
         {
             _faces = faces;
             _handlers = handlers;
         }
 
-        public List<Face> GetFaces(bool reset = false)
+        public IEnumerable<Face> GetFaces(bool reset = false)
         {
             if(reset)
             {
@@ -33,7 +33,7 @@ namespace RubiksCubeDemo.Processor
             return _faces;
         }
 
-        public List<Face> RotateFace(string rotationCommand)
+        public IEnumerable<Face> RotateFace(string rotationCommand)
         {
             var handler = GetRotationHander(rotationCommand);
             handler.Rotate();

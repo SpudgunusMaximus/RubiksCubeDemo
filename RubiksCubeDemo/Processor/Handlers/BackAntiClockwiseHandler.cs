@@ -6,7 +6,7 @@ namespace RubiksCubeDemo.Processor.Handlers
 {
     public class BackAntiClockwiseHandler : RotationHandlerBase, IRotationHandler
     {
-        public BackAntiClockwiseHandler(List<Face> faces) : base(faces, FaceType.Back, RotationType.AntiClockwise) { }
+        public BackAntiClockwiseHandler(IEnumerable<Face> faces) : base(faces, FaceType.Back, RotationType.AntiClockwise) { }
         public void Rotate()
         {
             Transpose();
