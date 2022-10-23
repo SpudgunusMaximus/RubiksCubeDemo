@@ -27,20 +27,20 @@ namespace RubiksCubeDemo.Processor.Handlers
             var rightFaceCubiesCopy = (Color[,])rightFace.Cubies.Clone();
             var leftFaceCubiesCopy = (Color[,])leftFace.Cubies.Clone();
 
-            rightFace.Cubies[2, 0] = frontFaceCubiesCopy[2, 0];
-            rightFace.Cubies[2, 1] = frontFaceCubiesCopy[2, 1];
+            rightFace.Cubies[0, 2] = frontFaceCubiesCopy[0, 2];
+            rightFace.Cubies[1, 2] = frontFaceCubiesCopy[1, 2];
             rightFace.Cubies[2, 2] = frontFaceCubiesCopy[2, 2];
 
-            backFace.Cubies[2, 0] = rightFaceCubiesCopy[2, 0];
-            backFace.Cubies[2, 1] = rightFaceCubiesCopy[2, 1];
+            backFace.Cubies[0, 2] = rightFaceCubiesCopy[0, 2];
+            backFace.Cubies[1, 2] = rightFaceCubiesCopy[1, 2];
             backFace.Cubies[2, 2] = rightFaceCubiesCopy[2, 2];
 
-            leftFace.Cubies[2, 0] = backFaceCubiesCopy[2, 0];
-            leftFace.Cubies[2, 1] = backFaceCubiesCopy[2, 1];
+            leftFace.Cubies[0, 2] = backFaceCubiesCopy[0, 2];
+            leftFace.Cubies[1, 2] = backFaceCubiesCopy[1, 2];
             leftFace.Cubies[2, 2] = backFaceCubiesCopy[2, 2];
 
-            frontFace.Cubies[2, 0] = leftFaceCubiesCopy[2, 0];
-            frontFace.Cubies[2, 1] = leftFaceCubiesCopy[2, 1];
+            frontFace.Cubies[0, 2] = leftFaceCubiesCopy[0, 2];
+            frontFace.Cubies[1, 2] = leftFaceCubiesCopy[1, 2];
             frontFace.Cubies[2, 2] = leftFaceCubiesCopy[2, 2];
 
         }

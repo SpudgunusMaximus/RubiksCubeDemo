@@ -40,6 +40,18 @@ namespace RubiksCubeDemo
             return sb.ToString();
         }
 
+        public void Reset()
+        {
+            Color color = GetColor(FaceType);
+            for (int col = 0; col < ColLength; col++)
+            {
+                for (int row = 0; row < RowLength; row++)
+                {
+                    Cubies[col, row] = color;
+                }
+            }
+        }
+
         private Color GetColor(FaceType faceType) => faceType switch
         {
             FaceType.Front => Color.Green,

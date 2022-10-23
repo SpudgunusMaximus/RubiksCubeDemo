@@ -25,22 +25,6 @@ namespace RubiksCubeDemo.Processor.Handlers
             var leftFaceCubiesCopy = (Color[,])leftFace.Cubies.Clone();
             var rightFaceCubiesCopy = (Color[,])rightFace.Cubies.Clone();
 
-            //rightFace.Cubies[0, 0] = upFaceCubiesCopy[2, 0];
-            //rightFace.Cubies[1, 0] = upFaceCubiesCopy[2, 1];
-            //rightFace.Cubies[2, 0] = upFaceCubiesCopy[2, 2];
-
-            //downFace.Cubies[0, 2] = rightFaceCubiesCopy[0, 0];
-            //downFace.Cubies[0, 1] = rightFaceCubiesCopy[1, 0];
-            //downFace.Cubies[0, 0] = rightFaceCubiesCopy[2, 0];
-
-            //leftFace.Cubies[2, 2] = downFaceCubiesCopy[0, 2];
-            //leftFace.Cubies[1, 2] = downFaceCubiesCopy[0, 1];
-            //leftFace.Cubies[0, 2] = downFaceCubiesCopy[0, 0];
-
-            //upFace.Cubies[2, 0] = leftFaceCubiesCopy[2, 2];
-            //upFace.Cubies[2, 1] = leftFaceCubiesCopy[1, 2];
-            //upFace.Cubies[2, 2] = leftFaceCubiesCopy[0, 2];
-
             rightFace.Cubies[0, 0] = upFaceCubiesCopy[0, 2];
             rightFace.Cubies[0, 1] = upFaceCubiesCopy[1, 2];
             rightFace.Cubies[0, 2] = upFaceCubiesCopy[2, 2];

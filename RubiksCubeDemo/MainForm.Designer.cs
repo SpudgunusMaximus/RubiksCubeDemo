@@ -47,9 +47,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 199);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(949, 539);
+            this.panel1.Size = new System.Drawing.Size(590, 427);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -71,6 +72,7 @@
             this.btn_RightClockwise.TabIndex = 2;
             this.btn_RightClockwise.Text = "R";
             this.btn_RightClockwise.UseVisualStyleBackColor = true;
+            this.btn_RightClockwise.Click += new System.EventHandler(this.btn_RightClockwise_Click);
             // 
             // btn_BackClockwise
             // 
@@ -80,6 +82,7 @@
             this.btn_BackClockwise.TabIndex = 4;
             this.btn_BackClockwise.Text = "B";
             this.btn_BackClockwise.UseVisualStyleBackColor = true;
+            this.btn_BackClockwise.Click += new System.EventHandler(this.btn_BackClockwise_Click);
             // 
             // btn_UpClockwise
             // 
@@ -89,6 +92,7 @@
             this.btn_UpClockwise.TabIndex = 3;
             this.btn_UpClockwise.Text = "U";
             this.btn_UpClockwise.UseVisualStyleBackColor = true;
+            this.btn_UpClockwise.Click += new System.EventHandler(this.btn_UpClockwise_Click);
             // 
             // btn_DownClockwise
             // 
@@ -98,6 +102,7 @@
             this.btn_DownClockwise.TabIndex = 6;
             this.btn_DownClockwise.Text = "D";
             this.btn_DownClockwise.UseVisualStyleBackColor = true;
+            this.btn_DownClockwise.Click += new System.EventHandler(this.btn_DownClockwise_Click);
             // 
             // btn_LeftClockwise
             // 
@@ -107,6 +112,7 @@
             this.btn_LeftClockwise.TabIndex = 5;
             this.btn_LeftClockwise.Text = "L";
             this.btn_LeftClockwise.UseVisualStyleBackColor = true;
+            this.btn_LeftClockwise.Click += new System.EventHandler(this.btn_LeftClockwise_Click);
             // 
             // btn_DownAntiClockwise
             // 
@@ -116,6 +122,7 @@
             this.btn_DownAntiClockwise.TabIndex = 12;
             this.btn_DownAntiClockwise.Text = "D\'";
             this.btn_DownAntiClockwise.UseVisualStyleBackColor = true;
+            this.btn_DownAntiClockwise.Click += new System.EventHandler(this.btn_DownAntiClockwise_Click);
             // 
             // btn_LeftAntiClockwise
             // 
@@ -125,6 +132,7 @@
             this.btn_LeftAntiClockwise.TabIndex = 11;
             this.btn_LeftAntiClockwise.Text = "L\'";
             this.btn_LeftAntiClockwise.UseVisualStyleBackColor = true;
+            this.btn_LeftAntiClockwise.Click += new System.EventHandler(this.btn_LeftAntiClockwise_Click);
             // 
             // btn_BackAntiClockwise
             // 
@@ -134,6 +142,7 @@
             this.btn_BackAntiClockwise.TabIndex = 10;
             this.btn_BackAntiClockwise.Text = "B\'";
             this.btn_BackAntiClockwise.UseVisualStyleBackColor = true;
+            this.btn_BackAntiClockwise.Click += new System.EventHandler(this.btn_BackAntiClockwise_Click);
             // 
             // btn_UpAntiClockwise
             // 
@@ -143,6 +152,7 @@
             this.btn_UpAntiClockwise.TabIndex = 9;
             this.btn_UpAntiClockwise.Text = "U\'";
             this.btn_UpAntiClockwise.UseVisualStyleBackColor = true;
+            this.btn_UpAntiClockwise.Click += new System.EventHandler(this.btn_UpAntiClockwise_Click);
             // 
             // btn_RightAntiClockwise
             // 
@@ -152,6 +162,7 @@
             this.btn_RightAntiClockwise.TabIndex = 8;
             this.btn_RightAntiClockwise.Text = "R\'";
             this.btn_RightAntiClockwise.UseVisualStyleBackColor = true;
+            this.btn_RightAntiClockwise.Click += new System.EventHandler(this.btn_RightAntiClockwise_Click);
             // 
             // btn_FrontAntiClockwise
             // 
@@ -171,12 +182,13 @@
             this.btn_Reset.TabIndex = 13;
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_DownAntiClockwise);
             this.Controls.Add(this.btn_LeftAntiClockwise);
@@ -191,8 +203,8 @@
             this.Controls.Add(this.btn_RightClockwise);
             this.Controls.Add(this.btn_FrontClockwise);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1200, 800);
-            this.MinimumSize = new System.Drawing.Size(1200, 800);
+            this.MaximumSize = new System.Drawing.Size(800, 800);
+            this.MinimumSize = new System.Drawing.Size(800, 800);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);

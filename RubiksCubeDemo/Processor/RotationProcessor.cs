@@ -7,6 +7,7 @@ namespace RubiksCubeDemo.Processor
     public interface IRotationProcessor
     {
         List<Face> RotateFace(string rotationCommand);
+        void Reset();
     }
 
     public class RotationProcessor : IRotationProcessor
@@ -43,5 +44,13 @@ namespace RubiksCubeDemo.Processor
             CommandConstants.CST_DOWN_ANTICLOCKWISE => _handlers.Single(h => h.FaceType == FaceType.Down && h.RotationType == RotationType.AntiClockwise),
             _ => throw new ArgumentOutOfRangeException(nameof(rotationCommand), $"Not expecting rotationCommand value {rotationCommand}"),           
         };
+
+        public void Reset()
+        {
+            foreach(var face in _faces)
+            {
+                face.Reset();
+            }
+        }
     }
 }

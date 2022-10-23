@@ -24,7 +24,7 @@ namespace RubiksCubeDemo.Processor.Handlers
 
             int maxIndex = _rotationFace!.ColLength - 1;
 
-            if (RotationType == RotationType.Clockwise)
+            if (RotationType == RotationType.AntiClockwise)
             {
                 for (int i = 0; i <= maxIndex; i++)
                 {

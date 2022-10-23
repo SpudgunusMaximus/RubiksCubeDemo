@@ -3,10 +3,9 @@ using static RubiksCubeDemo.RotationTypes;
 
 namespace RubiksCubeDemo.Processor.Handlers
 {
-    internal class BackAntiClockwiseHandler : RotationHandlerBase, IRotationHandler 
+    internal class BackAntiClockwiseHandler : RotationHandlerBase, IRotationHandler
     {
         public BackAntiClockwiseHandler(List<Face> faces) : base(faces, FaceType.Back, RotationType.AntiClockwise) { }
-
         public void Rotate()
         {
             Transpose();
@@ -25,21 +24,21 @@ namespace RubiksCubeDemo.Processor.Handlers
             var rightFaceCubiesCopy = (Color[,])rightFace.Cubies.Clone();
             var upFaceCubiesCopy = (Color[,])upFace.Cubies.Clone();
 
-            leftFace.Cubies[0, 0] = downFaceCubiesCopy[2, 0];
-            leftFace.Cubies[1, 0] = downFaceCubiesCopy[2, 1];
-            leftFace.Cubies[2, 0] = downFaceCubiesCopy[2, 2];
+            leftFace.Cubies[0, 0] = downFaceCubiesCopy[0, 2];
+            leftFace.Cubies[0, 1] = downFaceCubiesCopy[1, 2];
+            leftFace.Cubies[0, 2] = downFaceCubiesCopy[2, 2];
 
-            downFace.Cubies[2, 0] = rightFaceCubiesCopy[2, 2];
-            downFace.Cubies[2, 1] = rightFaceCubiesCopy[1, 2];
-            downFace.Cubies[2, 2] = rightFaceCubiesCopy[0, 2];
+            downFace.Cubies[2, 2] = rightFaceCubiesCopy[2, 0];
+            downFace.Cubies[1, 2] = rightFaceCubiesCopy[2, 1];
+            downFace.Cubies[0, 2] = rightFaceCubiesCopy[2, 2];
 
-            rightFace.Cubies[2, 2] = upFaceCubiesCopy[0, 2];
-            rightFace.Cubies[1, 2] = upFaceCubiesCopy[0, 1];
-            rightFace.Cubies[0, 2] = upFaceCubiesCopy[0, 0];
+            rightFace.Cubies[2, 2] = upFaceCubiesCopy[2, 0];
+            rightFace.Cubies[2, 1] = upFaceCubiesCopy[1, 0];
+            rightFace.Cubies[2, 0] = upFaceCubiesCopy[0, 0];
 
-            upFace.Cubies[0, 2] = leftFaceCubiesCopy[0, 0];
-            upFace.Cubies[0, 1] = leftFaceCubiesCopy[1, 0];
-            upFace.Cubies[0, 0] = leftFaceCubiesCopy[2, 0];
+            upFace.Cubies[2, 0] = leftFaceCubiesCopy[0, 0];
+            upFace.Cubies[1, 0] = leftFaceCubiesCopy[0, 1];
+            upFace.Cubies[0, 0] = leftFaceCubiesCopy[0, 2];
 
         }
     }
