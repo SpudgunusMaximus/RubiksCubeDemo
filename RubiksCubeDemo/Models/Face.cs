@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using static RubiksCubeDemo.FaceTypes;
+using static RubiksCubeDemo.Models.FaceTypes;
 
-namespace RubiksCubeDemo
+namespace RubiksCubeDemo.Models
 {
     public class Face
     {

@@ -1,13 +1,15 @@
-﻿using RubiksCubeDemo.Processor.Handlers;
-using static RubiksCubeDemo.FaceTypes;
-using static RubiksCubeDemo.RotationTypes;
+﻿using RubiksCubeDemo.Constants;
+using RubiksCubeDemo.Models;
+using RubiksCubeDemo.Processor.Handlers;
+using static RubiksCubeDemo.Models.FaceTypes;
+using static RubiksCubeDemo.Models.RotationTypes;
 
 namespace RubiksCubeDemo.Processor
 {
     public interface IRotationProcessor
     {
         List<Face> RotateFace(string rotationCommand);
-        void Reset();
+        List<Face> GetFaces(bool reset = false);
     }
 
     public class RotationProcessor : IRotationProcessor
@@ -19,6 +21,16 @@ namespace RubiksCubeDemo.Processor
         {
             _faces = faces;
             _handlers = handlers;
+        }
+
+        public List<Face> GetFaces(bool reset = false)
+        {
+            if(reset)
+            {
+                Reset();
+            }
+
+            return _faces;
         }
 
         public List<Face> RotateFace(string rotationCommand)
@@ -45,7 +57,7 @@ namespace RubiksCubeDemo.Processor
             _ => throw new ArgumentOutOfRangeException(nameof(rotationCommand), $"Not expecting rotationCommand value {rotationCommand}"),           
         };
 
-        public void Reset()
+        private void Reset()
         {
             foreach(var face in _faces)
             {

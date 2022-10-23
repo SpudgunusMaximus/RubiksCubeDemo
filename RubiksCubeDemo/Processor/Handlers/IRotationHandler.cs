@@ -1,5 +1,5 @@
-﻿using static RubiksCubeDemo.FaceTypes;
-using static RubiksCubeDemo.RotationTypes;
+﻿using static RubiksCubeDemo.Models.FaceTypes;
+using static RubiksCubeDemo.Models.RotationTypes;
 
 namespace RubiksCubeDemo.Processor.Handlers
 {

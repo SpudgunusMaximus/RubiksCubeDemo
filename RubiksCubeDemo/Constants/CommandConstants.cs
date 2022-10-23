@@ -1,4 +1,4 @@
-﻿namespace RubiksCubeDemo
+﻿namespace RubiksCubeDemo.Constants
 {
     public static class CommandConstants
     {

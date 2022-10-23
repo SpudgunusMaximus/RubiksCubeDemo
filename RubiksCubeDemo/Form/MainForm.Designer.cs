@@ -42,21 +42,26 @@
             this.btn_RightAntiClockwise = new System.Windows.Forms.Button();
             this.btn_FrontAntiClockwise = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lst_MoveHistory = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 199);
+            this.panel1.Location = new System.Drawing.Point(12, 114);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(590, 427);
+            this.panel1.Size = new System.Drawing.Size(576, 427);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btn_FrontClockwise
             // 
-            this.btn_FrontClockwise.Location = new System.Drawing.Point(26, 81);
+            this.btn_FrontClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_FrontClockwise.Location = new System.Drawing.Point(27, 28);
             this.btn_FrontClockwise.Name = "btn_FrontClockwise";
             this.btn_FrontClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_FrontClockwise.TabIndex = 1;
@@ -66,7 +71,8 @@
             // 
             // btn_RightClockwise
             // 
-            this.btn_RightClockwise.Location = new System.Drawing.Point(78, 81);
+            this.btn_RightClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_RightClockwise.Location = new System.Drawing.Point(79, 28);
             this.btn_RightClockwise.Name = "btn_RightClockwise";
             this.btn_RightClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_RightClockwise.TabIndex = 2;
@@ -76,7 +82,8 @@
             // 
             // btn_BackClockwise
             // 
-            this.btn_BackClockwise.Location = new System.Drawing.Point(182, 81);
+            this.btn_BackClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_BackClockwise.Location = new System.Drawing.Point(183, 28);
             this.btn_BackClockwise.Name = "btn_BackClockwise";
             this.btn_BackClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_BackClockwise.TabIndex = 4;
@@ -86,7 +93,8 @@
             // 
             // btn_UpClockwise
             // 
-            this.btn_UpClockwise.Location = new System.Drawing.Point(130, 81);
+            this.btn_UpClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_UpClockwise.Location = new System.Drawing.Point(131, 28);
             this.btn_UpClockwise.Name = "btn_UpClockwise";
             this.btn_UpClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_UpClockwise.TabIndex = 3;
@@ -96,7 +104,8 @@
             // 
             // btn_DownClockwise
             // 
-            this.btn_DownClockwise.Location = new System.Drawing.Point(286, 81);
+            this.btn_DownClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DownClockwise.Location = new System.Drawing.Point(287, 28);
             this.btn_DownClockwise.Name = "btn_DownClockwise";
             this.btn_DownClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_DownClockwise.TabIndex = 6;
@@ -106,7 +115,8 @@
             // 
             // btn_LeftClockwise
             // 
-            this.btn_LeftClockwise.Location = new System.Drawing.Point(234, 81);
+            this.btn_LeftClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_LeftClockwise.Location = new System.Drawing.Point(235, 28);
             this.btn_LeftClockwise.Name = "btn_LeftClockwise";
             this.btn_LeftClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_LeftClockwise.TabIndex = 5;
@@ -116,7 +126,8 @@
             // 
             // btn_DownAntiClockwise
             // 
-            this.btn_DownAntiClockwise.Location = new System.Drawing.Point(286, 123);
+            this.btn_DownAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DownAntiClockwise.Location = new System.Drawing.Point(287, 64);
             this.btn_DownAntiClockwise.Name = "btn_DownAntiClockwise";
             this.btn_DownAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_DownAntiClockwise.TabIndex = 12;
@@ -126,7 +137,8 @@
             // 
             // btn_LeftAntiClockwise
             // 
-            this.btn_LeftAntiClockwise.Location = new System.Drawing.Point(234, 123);
+            this.btn_LeftAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_LeftAntiClockwise.Location = new System.Drawing.Point(235, 64);
             this.btn_LeftAntiClockwise.Name = "btn_LeftAntiClockwise";
             this.btn_LeftAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_LeftAntiClockwise.TabIndex = 11;
@@ -136,7 +148,8 @@
             // 
             // btn_BackAntiClockwise
             // 
-            this.btn_BackAntiClockwise.Location = new System.Drawing.Point(182, 123);
+            this.btn_BackAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_BackAntiClockwise.Location = new System.Drawing.Point(183, 64);
             this.btn_BackAntiClockwise.Name = "btn_BackAntiClockwise";
             this.btn_BackAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_BackAntiClockwise.TabIndex = 10;
@@ -146,7 +159,8 @@
             // 
             // btn_UpAntiClockwise
             // 
-            this.btn_UpAntiClockwise.Location = new System.Drawing.Point(130, 123);
+            this.btn_UpAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_UpAntiClockwise.Location = new System.Drawing.Point(131, 64);
             this.btn_UpAntiClockwise.Name = "btn_UpAntiClockwise";
             this.btn_UpAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_UpAntiClockwise.TabIndex = 9;
@@ -156,7 +170,8 @@
             // 
             // btn_RightAntiClockwise
             // 
-            this.btn_RightAntiClockwise.Location = new System.Drawing.Point(78, 123);
+            this.btn_RightAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_RightAntiClockwise.Location = new System.Drawing.Point(79, 64);
             this.btn_RightAntiClockwise.Name = "btn_RightAntiClockwise";
             this.btn_RightAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_RightAntiClockwise.TabIndex = 8;
@@ -166,7 +181,8 @@
             // 
             // btn_FrontAntiClockwise
             // 
-            this.btn_FrontAntiClockwise.Location = new System.Drawing.Point(26, 123);
+            this.btn_FrontAntiClockwise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_FrontAntiClockwise.Location = new System.Drawing.Point(27, 64);
             this.btn_FrontAntiClockwise.Name = "btn_FrontAntiClockwise";
             this.btn_FrontAntiClockwise.Size = new System.Drawing.Size(46, 23);
             this.btn_FrontAntiClockwise.TabIndex = 7;
@@ -176,7 +192,7 @@
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(425, 81);
+            this.btn_Reset.Location = new System.Drawing.Point(600, 12);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(75, 23);
             this.btn_Reset.TabIndex = 13;
@@ -184,11 +200,41 @@
             this.btn_Reset.UseVisualStyleBackColor = true;
             this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lst_MoveHistory);
+            this.groupBox1.Location = new System.Drawing.Point(594, 107);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(78, 434);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "History";
+            // 
+            // lst_MoveHistory
+            // 
+            this.lst_MoveHistory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lst_MoveHistory.FormattingEnabled = true;
+            this.lst_MoveHistory.ItemHeight = 15;
+            this.lst_MoveHistory.Location = new System.Drawing.Point(6, 22);
+            this.lst_MoveHistory.Name = "lst_MoveHistory";
+            this.lst_MoveHistory.Size = new System.Drawing.Size(66, 407);
+            this.lst_MoveHistory.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(12, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(339, 100);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Moves";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 761);
+            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_DownAntiClockwise);
             this.Controls.Add(this.btn_LeftAntiClockwise);
@@ -203,10 +249,12 @@
             this.Controls.Add(this.btn_RightClockwise);
             this.Controls.Add(this.btn_FrontClockwise);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(800, 800);
-            this.MinimumSize = new System.Drawing.Size(800, 800);
+            this.Controls.Add(this.groupBox2);
+            this.MaximumSize = new System.Drawing.Size(700, 600);
+            this.MinimumSize = new System.Drawing.Size(700, 600);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Rubik\'s Cube Demo";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +275,8 @@
         private Button btn_RightAntiClockwise;
         private Button btn_FrontAntiClockwise;
         private Button btn_Reset;
+        private GroupBox groupBox1;
+        private ListBox lst_MoveHistory;
+        private GroupBox groupBox2;
     }
 }

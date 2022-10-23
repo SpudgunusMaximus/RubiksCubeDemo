@@ -1,4 +1,4 @@
-﻿namespace RubiksCubeDemo
+﻿namespace RubiksCubeDemo.Models
 {
     public class FaceTypes
     {

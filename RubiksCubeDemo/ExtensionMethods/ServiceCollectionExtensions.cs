@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using RubiksCubeDemo.Models;
 using RubiksCubeDemo.Processor.Handlers;
 using System.Reflection;
-using static RubiksCubeDemo.FaceTypes;
+using static RubiksCubeDemo.Models.FaceTypes;
 
 namespace RubiksCubeDemo.ExtensionMethods
 {
